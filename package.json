@@ -1,0 +1,28 @@
+{
+  "name": "Back-End",
+  "version": "1.0.0",
+  "description": "AirBnb-Opto's Back-End",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AirBnB-Optimal-Price-1-LS/Back-End.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AirBnB-Optimal-Price-1-LS/Back-End/issues"
+  },
+  "homepage": "https://github.com/AirBnB-Optimal-Price-1-LS/Back-End#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.20.2",
+    "sqlite3": "^4.1.0"
+  }
+}
