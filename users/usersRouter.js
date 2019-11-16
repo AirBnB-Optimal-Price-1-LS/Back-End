@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Users = require('./usersModel.js')
+const Property = require('../property/propertyModel.js')
 
 //TODO GET all users ---- /api/users
 router.get('/', (req, res) => {
@@ -52,6 +53,40 @@ router.put('/:id', (req, res) => {
           res.status(500).json({message: "Unable to update user. Please try again later."})
      })
 })
+
+
+
+//TODO POST new property using user's ID --- /api/users/:id/property
+router.post('/:id/property', (req, res) => {
+     const id = req.params.id;
+     const property = req.body; 
+     const newProperty = {...property, user_id:id}
+
+     Property.insert(newProperty)
+     .then(added => {
+          res.status(200).json(added)
+     })
+     .catch(error => {
+          res.status(500).json({message: "Unable to post new property. Try again later"})
+     })
+})
+
+
+
+//TODO GET properties using user's ID --- /api/users/:id/property 
+router.get('/:id/property', (req,res) => {
+     const id = req.params.id;
+
+     Property
+     .findByUser(id)
+     .then(properties => {
+          res.status(201).json(properties)
+     })
+     .catch(error => {
+          res.status(500).json({message: "Unable to find any properties. Try again later"})
+     })
+})
+
 
 
 module.exports = router;

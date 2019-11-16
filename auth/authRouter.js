@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const Users = require('../users/usersModel.js');
 const validateUser = require('../users/usersHelpers.js')
 
-
+//TODO POST new user ---- /api/auth/register
 router.post('/register', (req,res) => {
      const newUser = req.body;
 
@@ -28,7 +28,7 @@ router.post('/register', (req,res) => {
      }
 })
 
-
+//TODO POST login user --- /api/auth/login
 router.post('/login', (req,res) => {
      let { username, password } = req.body;
 
@@ -40,6 +40,7 @@ router.post('/login', (req,res) => {
 
                res.status(201).json({
                     message: `Welcome ${user.username}`,
+                    user_id:user.id,
                     token
                })
           } else {
