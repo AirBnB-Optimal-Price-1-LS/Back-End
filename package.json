@@ -1,10 +1,12 @@
 {
-  "name": "Back-End",
+  "name": "back-end",
   "version": "1.0.0",
-  "description": "AirBnb-Opto's Back-End",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon index.js",
+    "test": "cross-env DB_ENV=testing jest --watch",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
     "helmet": "^3.21.2",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.20.2",
+    "nodemon": "^1.19.4",
     "sqlite3": "^4.1.0"
   }
 }

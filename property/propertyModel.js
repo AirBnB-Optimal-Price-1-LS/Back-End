@@ -38,4 +38,4 @@ function remove(id){
 //* UPDATE property by ID
 function update(id, property){
      return db('property').where('id', '=', id).update(property)
-}
+} 
