@@ -47,7 +47,7 @@ What is needed to login:
 ## .post /api/users/:id/property 
 #### https://buildweek-airbnb.herokuapp.com/api/users/:id/property 
 What is needed to add a new property: 
-*NOTE: Room types must either be 'Entire home/apt' or 'Private room'* 
+#### *NOTE: Room types must either be 'Entire home/apt' or 'Private room'* 
 We should make it a radio button option or something. 
 > {
      "name" : " ",
@@ -56,6 +56,7 @@ We should make it a radio button option or something.
      "neighborhood" : " ",
      "neighborhood_group" : " "
 }
+#### user_id will automatically implement itself 
 
 Example: 
 > { name:'oceanside house', minimum_nights:1, room_type:'Entire home/apt', neighborhood:'Helmholtzplatz', neighborhood_group:'Pankow', user_id:1}

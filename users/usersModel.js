@@ -21,6 +21,7 @@ function findAll(){
 
 function findByUser(user){
      return db('users')
+     .select('users.username', 'users.id')
      .where('username', '=', user)
      .first()
 }
