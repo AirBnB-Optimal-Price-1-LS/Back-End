@@ -26,3 +26,20 @@ describe('POST REGISTER - new user using an endpoint', function(){
      })
 })
 
+describe('POST LOGIN - /api/auth/login', function(){
+     beforeEach(async () => {
+          await db('users').truncate()
+     })
+     it('requires valid credentials', function () {
+          return request(server).post('/api/auth/login')
+          .then(response => {
+               expect(response.body.message).toMatch(/Please provide valid user credentials./i)
+          })
+     })
+     it('returns a token when logged in', async function(){
+          await Users.insert({ username:"kevin", password: "kevin111"})
+          const returningUser = await Users.findByUser("kevin")
+          expect(returningUser).toBeDefined()
+     })
+})
+
