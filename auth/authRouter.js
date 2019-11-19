@@ -12,7 +12,8 @@ router.post('/register', (req,res) => {
      const authenticatedUser = validateUser(newUser)
 
      if(authenticatedUser.isSuccessful === true){
-          const hash = bcrypt.hashSync(newUser.password, 12);
+          // TODO: CHANGED HASH FROM 12 to 8
+          const hash = bcrypt.hashSync(newUser.password, 8);
           newUser.password = hash;
 
           Users
