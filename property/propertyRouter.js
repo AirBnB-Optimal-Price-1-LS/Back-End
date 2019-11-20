@@ -10,6 +10,9 @@ router.get('/', (req,res) => {
      .then(properties => {
           res.status(201).json(properties)
      })
+     .catch(error => {
+          res.status(500).json(error)
+     })
 })
 
 //TODO GET property by ID ---- /api/property/:id
@@ -20,6 +23,9 @@ router.get('/:id', (req,res) => {
      .findById(id)
      .then(property => {
           res.status(201).json(property)
+     })
+     .catch(error => {
+          res.status(500).json(error)
      })
 })
 
@@ -33,6 +39,9 @@ router.delete('/:id', (req,res) => {
      .then(deleted => {
           res.status(201).json(deleted)
      })
+     .catch(error => {
+          res.status(500).json(error)
+     })
 })
 
 //TODO UPDATE property ---- /api/property/:id
@@ -44,6 +53,9 @@ router.put('/:id', (req,res) => {
      .update(id, updateProp)
      .then(updated => {
           res.status(201).json(updated)
+     })
+     .catch(error => {
+          res.status(500).json(error)
      })
 })
 
