@@ -64,7 +64,7 @@ router.post('/:id/property', (req, res) => {
 
      Property.insert(newProperty)
      .then(added => {
-          res.status(200).json(added)
+          res.status(200).json(added, {error: error.stack})
      })
      .catch(error => {
           res.status(500).json({message: "Unable to post new property. Try again later"})
