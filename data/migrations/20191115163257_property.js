@@ -12,6 +12,7 @@ exports.up = function(knex) {
           tbl.string('room_type', 128).notNullable()
           tbl.string('neighbourhood_group_cleansed', 255).notNullable()
           tbl.string('amenities', 355)
+          tbl.string('estimated_price', 128)
           tbl.integer('user_id')
                .unsigned()
                .notNullable()
