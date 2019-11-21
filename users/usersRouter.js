@@ -32,6 +32,8 @@ router.get('/:id', (req, res) => {
 
 //TODO DELETE user ---- /api/users/:id
 router.delete('/:id', (req, res) => {
+     const id = req.params.id
+
      Users
      .remove(id)
      .then(deleted => {
@@ -44,6 +46,8 @@ router.delete('/:id', (req, res) => {
 
 //TODO UPDATE user ---- /api/users/:id
 router.put('/:id', (req, res) => {
+     const id = req.params.id
+
      Users
      .update(id)
      .then(updated => {
